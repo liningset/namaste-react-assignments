@@ -1,7 +1,7 @@
 {
-  "name": "session-2",
-  "version": "1.0.0",
-  "description": "just a thing for session 2",
+  "name": "Namaste React 🚀",
+  "version": "2.0.0",
+  "description": "now a thing for the entirety of Namaste React course",
   "type": "module",
   "scripts": {
     "test": "jest",
