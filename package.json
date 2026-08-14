@@ -12,6 +12,7 @@
     "parcel": "^2.16.4"
   },
   "dependencies": {
+    "dotenv": "^17.4.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"
   },
