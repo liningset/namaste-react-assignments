@@ -1,7 +1,7 @@
 {
-  "name": "Namaste React 🚀",
-  "version": "2.0.0",
-  "description": "now a thing for the entirety of Namaste React course",
+  "name": "Food ordering app 🚀",
+  "version": "4.2.0",
+  "description": "the very first and exciting react frontend for a food app",
   "type": "module",
   "scripts": {
     "test": "jest",
