@@ -1,7 +1,22 @@
-import Nav from "./Nav";
+import NavList from "./NavList";
+import Hero from "./Hero";
+import logo from "../logo.png";
 
 const Header = () => {
-  return <header></header>;
+  /*
+    Dunno why but logo.png is not being loaded currently
+  
+  
+  */
+  return (
+    <header>
+      <nav>
+        <img src="../logo.png" alt="Logo" />
+        <NavList />
+      </nav>
+      <Hero />
+    </header>
+  );
 };
 
 export default Header;

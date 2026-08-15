@@ -5,13 +5,17 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "parcel index.html",
+    "start": "parcel serve index.html --no-cache",
     "build": "parcel build index.html"
   },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.16.4",
     "parcel": "^2.16.4"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^7.3.1",
+    "@fortawesome/free-solid-svg-icons": "^7.3.1",
+    "@fortawesome/react-fontawesome": "^3.5.0",
     "dotenv": "^17.4.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"

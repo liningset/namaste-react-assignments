@@ -28,8 +28,9 @@ the app that we will be building consts of these components per planned so far.(
 1.Header
     - logo
     - nav
+    - Hero
+        -Search bar
 1.Main
-    - Search bar
     - RestaurantsComponent
         - RestaurantCard
 1.Footer
