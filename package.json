@@ -5,12 +5,21 @@
   "type": "module",
   "scripts": {
     "test": "jest",
-    "start": "parcel serve index.html --no-cache",
-    "build": "parcel build index.html"
+    "start": "parcel public/index.html",
+    "build": "parcel build public/index.html"
   },
   "devDependencies": {
     "@parcel/transformer-image": "^2.16.4",
-    "parcel": "^2.16.4"
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.1",
+    "events": "^3.3.0",
+    "os-browserify": "^0.3.0",
+    "parcel": "^2.16.4",
+    "path-browserify": "^1.0.1",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0",
+    "string_decoder": "^1.3.0",
+    "vm-browserify": "^1.1.2"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.3.1",

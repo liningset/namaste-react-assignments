@@ -1,6 +1,5 @@
 import NavList from "./NavList";
 import Hero from "./Hero";
-import logo from "../logo.png";
 
 const Header = () => {
   /*
@@ -11,7 +10,7 @@ const Header = () => {
   return (
     <header>
       <nav>
-        <img src="../logo.png" alt="Logo" />
+        <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
         <NavList />
       </nav>
       <Hero />
