@@ -65,7 +65,7 @@ header nav {
 header section.hero-section {
   background-image: url(http://127.0.0.1:8080/hero.jpg);
   box-shadow: inset 0 0 0 2000px rgba(48, 48, 48, 0.3);
-  height: 80vh;
+  height: 30vh;
   background-blend-mode: darken;
   background-position: center;
   background-size: cover;
@@ -74,10 +74,11 @@ header section.hero-section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
 
   h1 {
-    margin-top: max(10%, 4rem);
+    /* margin-top: max(10%, 4rem); */
   }
 
   form {
@@ -120,7 +121,6 @@ main ul.restaurants {
   list-style-type: none;
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
 
   li.card {
@@ -193,6 +193,10 @@ main ul.restaurants {
     }
   }
 
+  main ul.restaurants {
+    grid-template-columns: repeat(auto-fit, 200px);
+  }
+
   main ul.restaurants,
   main {
     gap: 2rem;
@@ -202,6 +206,6 @@ main ul.restaurants {
 @media (min-width: 1100px) {
   header > *,
   main > * {
-    padding-inline: 10vw;
+    padding-inline: 15vw;
   }
 }
