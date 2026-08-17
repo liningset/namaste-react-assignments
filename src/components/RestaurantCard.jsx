@@ -1,6 +1,4 @@
 const RestaurantCard = ({ data }) => {
-  console.log(data);
-
   return (
     <li className="card">
       <div className="card-heading-image">
@@ -16,9 +14,9 @@ const RestaurantCard = ({ data }) => {
         <h4 className="title">{data.title}</h4>
         <span>Starts from {data.minCharge}</span>
         <div className="foot-type-container">
-          {data.type.map((type) => (
-            <span className="food-type" key={type}>
-              {type}
+          {data.cuisines.map((cuisine, i) => (
+            <span className="food-type" key={i}>
+              {cuisine}
             </span>
           ))}
         </div>
