@@ -2,9 +2,10 @@ import { useEffect, useState } from "react";
 import data from "../utils/data.json";
 import RestaurantCard from "./RestaurantCard";
 import { PROXY, API } from "../utils/constants";
+import Shimmer from "./Shimmer";
 
 const Main = ({ filterByString }) => {
-  const [restaurants, setRestaurants] = useState(data);
+  const [restaurants, setRestaurants] = useState([]);
 
   const fetchData = async (page = 1) => {
     const response = await fetch(API.concat(`&page=${page}&page_size=10`));
@@ -32,15 +33,18 @@ const Main = ({ filterByString }) => {
   return (
     <main id="explore">
       <h2>رستوران ها</h2>
-      <ul className="restaurants">
-        {restaurants.map((restaurant, i) => (
-          <RestaurantCard
-            data={restaurant?.data}
-            key={restaurant?.id ? restaurant.id : i}
-          />
-        ))}
-      </ul>
-      <button onClick={() => fetchData(2)}>fetch more</button>
+      {restaurants.length === 0 ? (
+        <Shimmer />
+      ) : (
+        <ul className="restaurants">
+          {restaurants.map((restaurant, i) => (
+            <RestaurantCard
+              data={restaurant?.data}
+              key={restaurant?.id ? restaurant.id : i}
+            />
+          ))}
+        </ul>
+      )}
     </main>
   );
 };
