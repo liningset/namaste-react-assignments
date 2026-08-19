@@ -5,12 +5,12 @@ const NavList = () => {
   return (
     <ul>
       <li>
-        <a href="#explore">Explore</a>
-      </li>
-      <li>
         <button>
           <FontAwesomeIcon icon={faCartShopping} />
         </button>
+      </li>
+      <li>
+        <a href="#explore">گردش</a>
       </li>
     </ul>
   );

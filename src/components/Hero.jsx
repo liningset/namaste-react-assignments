@@ -8,7 +8,7 @@ const Hero = ({ setFilterByString }) => {
   }
   return (
     <section className="hero-section">
-      <h1>Find Your Favorite Meals!</h1>
+      <h1>رستوران های مورد علاقتو پیدا کن!</h1>
       <form className="search-field" onSubmit={(e) => onFormSubmit(e)}>
         <input type="text" id="search-bar" />
         <button type="submit">

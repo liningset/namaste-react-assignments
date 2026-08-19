@@ -1,26 +1,28 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
+
 const RestaurantCard = ({ data }) => {
   return (
     <li className="card">
       <div className="card-heading-image">
-        <img
-          src={`http://127.0.0.1:8080/restaurant${Math.ceil(Math.random() * 3)}.jpg`}
-          alt="restaurant interior"
-        />
+        <img src={data?.backgroundImage} alt="restaurant interior" />
       </div>
       <div className="content">
         <div className="avatar">
-          <img src={data.image} alt={data.titlMC} />
+          <img src={data?.logo} alt={data?.title} />
         </div>
-        <h4 className="title">{data.title}</h4>
-        <span>Starts from {data.minCharge}</span>
-        <div className="foot-type-container">
-          {data.cuisines.map((cuisine, i) => (
-            <span className="food-type" key={i}>
-              {cuisine}
+        <h4 className="title">{data?.title}</h4>
+        <span>از {data?.minOrder / 1000} هزار تومان</span>
+        <div className="cuisines">
+          {data?.cuisinesArray.map((cuisine) => (
+            <span className="cuisine" key={cuisine.id}>
+              {cuisine.title}
             </span>
           ))}
         </div>
-        <span>Ratings: {data.rating}/10</span>
+        <span>
+          {data?.rate} <FontAwesomeIcon icon={faStar} />
+        </span>
       </div>
     </li>
   );

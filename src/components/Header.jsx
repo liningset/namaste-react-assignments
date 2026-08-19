@@ -10,8 +10,8 @@ const Header = ({ setFilterByString }) => {
   return (
     <header>
       <nav>
-        <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
         <NavList />
+        <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
       </nav>
       <Hero setFilterByString={setFilterByString} />
     </header>
