@@ -15,6 +15,7 @@
   --primary-fg: #252525;
   --secondary-fg: #efefef;
   --white: #fff;
+  --shimmer: #cbcbcb;
 }
 
 html {
@@ -193,6 +194,19 @@ main ul.restaurants {
   }
 }
 
+main ul.shimmer-cards {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+
+  .shimmer-card {
+    background-color: var(--shimmer);
+    border-radius: 2rem;
+    width: 100%;
+    aspect-ratio: 1 / 1.45;
+  }
+}
+
 @media (min-width: 768px) {
   header section.hero-section {
     gap: 2rem;
@@ -201,11 +215,13 @@ main ul.restaurants {
     }
   }
 
-  main ul.restaurants {
+  main ul.restaurants,
+  main ul.shimmer-cards {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
   main ul.restaurants,
+  main ul.shimmer-cards,
   main {
     gap: 2rem;
   }
