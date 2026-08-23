@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import data from "../utils/data.json";
 import RestaurantCard from "./RestaurantCard";
-import { PROXY, API } from "../utils/constants";
+import { API } from "../utils/constants";
 import Shimmer from "./Shimmer";
 
 const Main = ({ filterByString }) => {

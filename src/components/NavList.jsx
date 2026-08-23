@@ -10,7 +10,10 @@ const NavList = () => {
         </button>
       </li>
       <li>
-        <a href="#explore">گردش</a>
+        <a href="/about">درباره ما</a>
+      </li>
+      <li>
+        <a href="/#explore">گردش</a>
       </li>
     </ul>
   );
