@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { API } from "../utils/constants";
 import Shimmer from "./Shimmer";
+import Hero from "./Hero";
 
-const Main = ({ filterByString }) => {
+const Main = () => {
   const [restaurants, setRestaurants] = useState([]);
   const [restaurantsFiltered, setRestaurantsFiltered] = useState(restaurants);
+  const [filterByString, setFilterByString] = useState("");
 
   const fetchData = async (page = 1) => {
     const response = await fetch(API.concat(`&page=${page}&page_size=16`));
@@ -40,12 +42,13 @@ const Main = ({ filterByString }) => {
   }, [filterByString]);
 
   return (
-    <main id="explore">
+    <main>
+      <Hero setFilterByString={setFilterByString} />
       <h2>رستوران ها</h2>
       {restaurantsFiltered.length === 0 ? (
         <Shimmer />
       ) : (
-        <ul className="restaurants">
+        <ul className="restaurants" id="explore">
           {restaurantsFiltered.map((restaurant, i) => (
             <RestaurantCard
               data={restaurant?.data}
