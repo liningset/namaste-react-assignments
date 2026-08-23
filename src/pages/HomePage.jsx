@@ -3,16 +3,14 @@ import Header from "../components/Header";
 import Main from "../components/Main";
 import Footer from "../components/Footer";
 
-const App = () => {
-  const [filterByString, setFilterByString] = useState("");
-
+const HomePage = () => {
   return (
     <>
-      <Header setFilterByString={setFilterByString} />
-      <Main filterByString={filterByString} />
+      <Header />
+      <Main />
       <Footer />
     </>
   );
 };
 
-export default App;
+export default HomePage;

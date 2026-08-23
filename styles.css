@@ -69,7 +69,7 @@ header nav {
   }
 }
 
-header section.hero-section {
+main section.hero-section {
   background-image: url(http://127.0.0.1:8080/hero.jpg);
   box-shadow: inset 0 0 0 2000px rgba(48, 48, 48, 0.3);
   height: 30vh;
@@ -118,7 +118,7 @@ main {
   display: grid;
   gap: 1rem;
   color: var(--primary-fg);
-  margin-block: 2rem;
+  margin-bottom: 2rem;
 }
 
 main ul.restaurants {
@@ -224,7 +224,7 @@ main ul {
 }
 
 @media (min-width: 768px) {
-  header section.hero-section {
+  main section.hero-section {
     gap: 2rem;
     h1 {
       font-size: 3rem;
