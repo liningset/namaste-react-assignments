@@ -11,7 +11,7 @@
   "devDependencies": {
     "@parcel/transformer-image": "^2.16.4",
     "buffer": "^6.0.3",
-    "crypto-browserify": "^3.12.1",
+    "crypto-browserify": "^3.5.1",
     "events": "^3.3.0",
     "os-browserify": "^0.3.0",
     "parcel": "^2.16.4",
@@ -26,7 +26,8 @@
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "react-router": "^7.18.2"
   },
   "browserslist": {
     "production": [
