@@ -11,7 +11,9 @@ const Header = ({ setFilterByString }) => {
     <header>
       <nav>
         <NavList />
-        <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
+        <a href="/">
+          <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
+        </a>
       </nav>
       <Hero setFilterByString={setFilterByString} />
     </header>

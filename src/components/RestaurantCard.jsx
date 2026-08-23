@@ -20,8 +20,9 @@ const RestaurantCard = ({ data }) => {
             </span>
           ))}
         </div>
-        <span>
-          {data?.rate} <FontAwesomeIcon icon={faStar} />
+        <span className="rating-span">
+          {data?.rate}/۵
+          <FontAwesomeIcon icon={faStar} style={{ color: "gold" }} />
         </span>
       </div>
     </li>
