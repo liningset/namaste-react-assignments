@@ -1,4 +1,5 @@
 import ReactDOM from "react-dom/client";
+import AppLayout from "./pages/AppLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import LoginPage from "./pages/LoginPage";
@@ -8,14 +9,20 @@ import { createBrowserRouter, RouterProvider } from "react-router";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <HomePage />,
+    element: <AppLayout />,
     errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      { path: "/login", element: <LoginPage /> },
+    ],
   },
-  {
-    path: "/about",
-    element: <AboutPage />,
-  },
-  { path: "login", element: <LoginPage /> },
 ]);
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));

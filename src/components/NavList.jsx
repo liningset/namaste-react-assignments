@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router";
 
 const NavList = () => {
   return (
@@ -10,10 +11,10 @@ const NavList = () => {
         </button>
       </li>
       <li>
-        <a href="/about">درباره ما</a>
+        <Link to="/about">درباره ما</Link>
       </li>
       <li>
-        <a href="/#explore">گردش</a>
+        <Link to="/#explore">گردش</Link>
       </li>
     </ul>
   );
