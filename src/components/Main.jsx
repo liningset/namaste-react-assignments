@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
-import { API } from "../utils/constants";
+import { API_RESTAURANTS } from "../utils/constants";
 import Shimmer from "./Shimmer";
 import Hero from "./Hero";
+import { Link } from "react-router";
 
 const Main = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -10,7 +11,9 @@ const Main = () => {
   const [filterByString, setFilterByString] = useState("");
 
   const fetchData = async (page = 1) => {
-    const response = await fetch(API.concat(`&page=${page}&page_size=16`));
+    const response = await fetch(
+      API_RESTAURANTS.concat(`&page=${page}&page_size=16`),
+    );
     const data = await response.json();
     //removing unnecessary text entry
     data.data.finalResult.shift();
@@ -50,10 +53,12 @@ const Main = () => {
       ) : (
         <ul className="restaurants" id="explore">
           {restaurantsFiltered.map((restaurant, i) => (
-            <RestaurantCard
-              data={restaurant?.data}
+            <Link
+              to={`/restaurants/${restaurant?.data?.vendorCode}`}
               key={restaurant?.id ? restaurant.id : i}
-            />
+            >
+              <RestaurantCard data={restaurant?.data} />
+            </Link>
           ))}
         </ul>
       )}

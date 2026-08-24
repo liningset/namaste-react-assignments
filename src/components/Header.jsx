@@ -1,5 +1,5 @@
 import NavList from "./NavList";
-import Hero from "./Hero";
+import { Link } from "react-router";
 
 const Header = () => {
   /*
@@ -11,9 +11,9 @@ const Header = () => {
     <header>
       <nav>
         <NavList />
-        <a href="/">
+        <Link to="/">
           <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
-        </a>
+        </Link>
       </nav>
     </header>
   );

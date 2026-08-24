@@ -10,7 +10,7 @@
 }
 
 :root {
-  --primary-bg: rgba(240, 230, 140, 0.5);
+  --primary-bg: rgb(245, 238, 189);
   --accent-clr: #ed1c24;
   --primary-fg: #252525;
   --box-shadow-clr: rgba(102, 102, 102, 0.25);
@@ -127,6 +127,11 @@ main ul.restaurants {
   width: 100%;
   gap: 1rem;
 
+  > a {
+    text-decoration: none;
+    color: var(--primary-fg);
+  }
+
   li.card {
     display: flex;
     flex-direction: column;
@@ -138,6 +143,7 @@ main ul.restaurants {
       scale 0.3s ease,
       translate 0.3s ease;
     box-shadow: 0 0 1rem var(--box-shadow-clr);
+    height: 100%; /* because it's all wrapped inside the anchor tag*/
 
     .card-heading-image {
       width: 100%;
@@ -221,6 +227,24 @@ main ul {
   /* importtant note: auto-fill doesn't collapse empty columns which is good,
   i learned this after hours of frustration */
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.restaurant-container {
+  .hero-cover {
+    height: 70vh;
+    position: relative;
+  }
+  .hero-cover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, var(--primary-bg) 20%, transparent 70%);
+  }
+  .hero-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (min-width: 768px) {
