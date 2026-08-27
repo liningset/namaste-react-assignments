@@ -1,4 +1,5 @@
 export const PROXY = "https://corsproxy.io/?url=";
+export const PUBLIC_DIR = "http://127.0.0.1:8080/";
 export const API_RESTAURANTS =
   "https://snappfood.ir/search/api/v4/restaurant/vendors-list?lat=35.715&long=51.404";
 
