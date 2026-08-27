@@ -1,3 +1,4 @@
+import { PUBLIC_DIR } from "../utils/constants";
 import NavList from "./NavList";
 import { Link } from "react-router";
 
@@ -12,7 +13,7 @@ const Header = () => {
       <nav>
         <NavList />
         <Link to="/">
-          <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
+          <img src={PUBLIC_DIR + "logo.png"} alt="Logo" />
         </Link>
       </nav>
     </header>

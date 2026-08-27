@@ -29,8 +29,10 @@ const RestaurantPage = () => {
       <div className="hero-cover">
         <img src={infoData?.cover} alt="cover" />
       </div>
-      <h1>{infoData?.title}</h1>
-      <p>{`${infoData?.cityTitle}, ${infoData?.address?.area}, ${infoData?.address?.address}`}</p>
+      <main className="restaurant-main">
+        <h1>{infoData?.title}</h1>
+        <p>{`${infoData?.cityTitle}, ${infoData?.address?.area}, ${infoData?.address?.address}`}</p>
+      </main>
     </article>
   );
 };

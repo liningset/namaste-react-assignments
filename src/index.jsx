@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import AppLayout from "./pages/AppLayout";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
 import ErrorPage from "./pages/ErrorPage";
 import RestaurantPage from "./pages/RestaurantPage";
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
       },
       { path: "/login", element: <LoginPage /> },
       {

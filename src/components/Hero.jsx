@@ -10,7 +10,7 @@ const Hero = ({ setFilterByString }) => {
     <section className="hero-section">
       <h1>رستوران های مورد علاقتو پیدا کن!</h1>
       <form className="search-field" onSubmit={(e) => onFormSubmit(e)}>
-        <input type="text" id="search-bar" />
+        <input type="text" id="search-bar" className="search-bar" />
         <button type="submit">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>
