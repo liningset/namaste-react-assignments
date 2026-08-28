@@ -1,38 +1,81 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { API_VENDOR_DETAILS, API_VENDOR_MENU } from "../utils/constants";
+import {
+  API_VENDOR_DETAILS,
+  API_VENDOR_MENU,
+  API_VENDOR_REVIEW,
+} from "../utils/constants";
 import Shimmer from "../components/Shimmer";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faLocationDot,
+  faMapPin,
+  faStar,
+} from "@fortawesome/free-solid-svg-icons";
 
 const RestaurantPage = () => {
   const { resID } = useParams();
-  const [menuData, setMenuData] = useState(null);
-  const [infoData, setInfoData] = useState(null);
+  const [allData, setAllData] = useState(null);
 
-  const fetchMenuData = async () => {
-    const menuResponse = await fetch(API_VENDOR_MENU + resID);
-    const menuData = await menuResponse.json();
-    setMenuData(menuData?.data);
-    const infoResponse = await fetch(API_VENDOR_DETAILS + resID);
-    const infoData = await infoResponse.json();
-    setInfoData(infoData?.data);
-    console.log(infoData?.data);
+  const fetchData = async (API) => {
+    const response = await fetch(API);
+    const data = await response.json();
+    return data?.data;
+  };
+
+  const assembleAllData = async () => {
+    const vendorDetails = await fetchData(API_VENDOR_DETAILS + resID);
+    const vendorDetailsExtra = await fetchData(API_VENDOR_REVIEW + resID);
+    const vendorMenu = await fetchData(API_VENDOR_MENU + resID);
+    setAllData({ ...vendorDetails, ...vendorDetailsExtra, ...vendorMenu });
+    console.log({ ...vendorDetails, ...vendorDetailsExtra, ...vendorMenu });
+  };
+
+  const convertRatingFormat = (rating) => {
+    console.log(rating);
+
+    return ((Number(rating) * 5) / 10).toFixed(1);
   };
 
   useEffect(() => {
-    fetchMenuData();
+    assembleAllData();
   }, []);
 
-  return infoData === null ? (
+  return allData === null ? (
     <Shimmer />
   ) : (
     <article className="restaurant-container">
       <div className="hero-cover">
-        <img src={infoData?.cover} alt="cover" />
+        <img src={allData?.cover} alt="cover" />
       </div>
-      <main className="restaurant-main">
-        <h1>{infoData?.title}</h1>
-        <p>{`${infoData?.cityTitle}, ${infoData?.address?.area}, ${infoData?.address?.address}`}</p>
-      </main>
+      <div className="article-wrapper">
+        <header className="restaurant-header">
+          <div className="avatar">
+            <img src={allData?.logo} alt="logo" />
+          </div>
+          <div>
+            <h2>{allData?.title}</h2>
+            <div className="sub-sub-heading">
+              <h4>
+                <FontAwesomeIcon icon={faStar} style={{ fontSize: "0.8rem" }} />
+                {convertRatingFormat(allData?.rate)}
+              </h4>
+              <h4>{`(${allData?.rateCount})`}</h4>
+              <h4>{allData?.reviewCount} نظر</h4>
+            </div>
+          </div>
+        </header>
+        <main className="restaurant-main">
+          <h3>
+            <FontAwesomeIcon icon={faLocationDot} />
+            {allData?.cityTitle}, {allData?.address?.area}
+          </h3>
+          <p>
+            <FontAwesomeIcon icon={faMapPin} style={{ color: "red" }} />
+            {allData?.address?.address}
+          </p>
+        </main>
+      </div>
     </article>
   );
 };

@@ -6,3 +6,5 @@ export const API_RESTAURANTS =
 export const API_VENDOR_MENU = "https://apigw.snappfood.ir/menu-read-model/";
 export const API_VENDOR_DETAILS =
   "https://apigw.snappfood.ir/menu-read-model/vendor-details/";
+export const API_VENDOR_REVIEW =
+  "https://apigw.snappfood.ir/menu-read-model/vendor-review/";
