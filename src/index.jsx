@@ -1,6 +1,39 @@
-import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router";
 import ReactDOM from "react-dom/client";
-import AppLayout from "./components/AppLayout";
+import AppLayout from "./pages/AppLayout";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import LoginPage from "./pages/LoginPage";
+import ErrorPage from "./pages/ErrorPage";
+import RestaurantPage from "./pages/RestaurantPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/about",
+        element: <AboutPage />,
+      },
+      {
+        path: "/contact",
+        element: <ContactPage />,
+      },
+      { path: "/login", element: <LoginPage /> },
+      {
+        path: "/restaurants/:resID",
+        element: <RestaurantPage />,
+      },
+    ],
+  },
+]);
 
 const root = ReactDOM.createRoot(document.querySelector("#root"));
-root.render(<AppLayout />);
+root.render(<RouterProvider router={router} />);

@@ -1,5 +1,6 @@
+import { PUBLIC_DIR } from "../utils/constants";
 import NavList from "./NavList";
-import Hero from "./Hero";
+import { Link } from "react-router";
 
 const Header = ({ setFilterByString }) => {
   /*
@@ -8,14 +9,13 @@ const Header = ({ setFilterByString }) => {
   
   */
   return (
-    <header>
+    <header className="page-header">
       <nav>
         <NavList />
-        <a href="/">
-          <img src="http://127.0.0.1:8080/logo.png" alt="Logo" />
-        </a>
+        <Link to="/">
+          <img src={PUBLIC_DIR + "logo.png"} alt="Logo" />
+        </Link>
       </nav>
-      <Hero setFilterByString={setFilterByString} />
     </header>
   );
 };

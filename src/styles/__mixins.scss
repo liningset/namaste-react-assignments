@@ -1,0 +1,16 @@
+@mixin page-width {
+  width: min(90vw, 1300px);
+}
+
+@mixin restaurant-avatar {
+  width: 5rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--white);
+  z-index: 10;
+
+  img {
+    width: 100%;
+  }
+}

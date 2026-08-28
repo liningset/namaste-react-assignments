@@ -1,0 +1,72 @@
+@use "./__mixins" as *;
+
+header.page-header {
+  background-color: var(--primary-fg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  z-index: 9999;
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+    @include page-width;
+
+    a:has(img) {
+      display: flex;
+
+      img {
+        width: 30px;
+      }
+    }
+
+    img {
+      width: 30px;
+    }
+
+    ul {
+      list-style-type: none;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      button {
+        background-color: transparent;
+        border: none;
+        color: var(--secondary-fg);
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
+
+      li {
+        color: var(--secondary-fg);
+        position: relative;
+
+        a {
+          display: inline-block;
+          transition:
+            color 0.3s ease,
+            text-shadow 0.3s ease;
+          text-decoration: none;
+          color: inherit;
+          height: 100%;
+        }
+
+        &:hover a {
+          color: var(--primary-bg);
+          text-shadow: 0 0 15px var(--primary-bg);
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  header nav ul {
+    gap: 2rem;
+  }
+}

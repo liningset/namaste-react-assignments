@@ -1,0 +1,38 @@
+@use "./__Header";
+@use "./__Hero";
+@use "./__Main";
+@use "./__RestaurantCard";
+@use "./__RestaurantPage";
+@use "./__MenuCategory";
+@use "./_Shimmer";
+
+@font-face {
+  src: url(../../public/Yekan.ttf) format(truetype);
+  font-family: "B-Yekan";
+}
+
+:root {
+  --primary-bg: rgb(245, 238, 189);
+  --accent-clr: #ed1c24;
+  --primary-fg: #252525;
+  --grey: #3d3d3d;
+  --box-shadow-clr: rgba(102, 102, 102, 0.25);
+  --secondary-fg: #efefef;
+  --white: #fff;
+  --shimmer: #cbcbcb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "B-yekan", sans-serif, serif;
+  display: grid;
+  justify-content: center;
+  background-color: var(--primary-bg);
+  scroll-behavior: smooth;
+}

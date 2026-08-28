@@ -1,0 +1,46 @@
+@use "./__mixins" as *;
+
+main.page-main {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+  color: var(--primary-fg);
+  margin-bottom: 2rem;
+
+  h2 {
+    justify-self: center;
+    @include page-width;
+  }
+
+  ul.restaurants {
+    list-style-type: none;
+    display: grid;
+    /* importtant note: auto-fill doesn't collapse empty columns which is good,
+  i learned this after hours of frustration */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-self: center;
+    gap: inherit;
+    @include page-width;
+
+    > a {
+      text-decoration: none;
+      color: var(--primary-fg);
+    }
+  }
+  ul.shimmer-cards {
+    @extend .restaurants;
+
+    .shimmer-card {
+      background-color: var(--shimmer);
+      border-radius: 2rem;
+      width: 100%;
+      aspect-ratio: 1 / 1.45;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  main.page-main {
+    gap: 2rem;
+  }
+}
