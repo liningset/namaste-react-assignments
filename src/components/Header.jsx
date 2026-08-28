@@ -2,7 +2,7 @@ import { PUBLIC_DIR } from "../utils/constants";
 import NavList from "./NavList";
 import { Link } from "react-router";
 
-const Header = ({ setFilterByString }) => {
+const Header = () => {
   /*
     Dunno why but logo.png is not being loaded currently
   
