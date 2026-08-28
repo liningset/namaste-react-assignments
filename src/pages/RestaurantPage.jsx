@@ -12,6 +12,7 @@ import {
   faMapPin,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import MenuCategory from "../components/MenuCategory";
 
 const RestaurantPage = () => {
   const { resID } = useParams();
@@ -42,7 +43,7 @@ const RestaurantPage = () => {
   }, []);
 
   return allData === null ? (
-    <Shimmer />
+    <Shimmer mode="restaurantpage" />
   ) : (
     <article className="restaurant-container">
       <div className="hero-cover">
@@ -74,6 +75,10 @@ const RestaurantPage = () => {
             <FontAwesomeIcon icon={faMapPin} style={{ color: "red" }} />
             {allData?.address?.address}
           </p>
+          {console.log(allData?.menuCategories[4])}
+          {allData?.menuCategories.map((category) => {
+            return <MenuCategory key={category.id} categoryData={category} />;
+          })}
         </main>
       </div>
     </article>

@@ -1,19 +1,21 @@
 const Shimmer = ({ mode }) => {
+  const iterateNtimes = (N) => {
+    const array = [];
+    for (let i = 1; i <= N; i++) {
+      array.push(<div className="shimmer-card" key={i}></div>);
+    }
+    return array;
+  };
   switch (mode) {
     case "homepage": {
-      const iterate15times = () => {
-        const array = [];
-        for (let i = 1; i <= 15; i++) {
-          array.push(<div className="shimmer-card" key={i}></div>);
-        }
-        return array;
-      };
-      return <ul className="shimmer-cards">{iterate15times()}</ul>;
+      return (
+        <ul className="shimmer-root shimmer-cards">{iterateNtimes(15)}</ul>
+      );
     }
 
     case "restaurantpage": {
       return (
-        <aside className="shimmer-root">
+        <aside className="shimmer-root restaurant-shimmer">
           <div className="shimmer-wrapper">
             <div className="shimmer-header">
               <div className="avatar"></div>
@@ -29,6 +31,14 @@ const Shimmer = ({ mode }) => {
             <div className="shimmer-main">
               <h3></h3>
               <p></p>
+              <div className="shimmer-category">
+                <h4></h4>
+                <ul>{iterateNtimes(10)}</ul>
+              </div>
+              <div className="shimmer-category">
+                <h4></h4>
+                <ul>{iterateNtimes(10)}</ul>
+              </div>
             </div>
           </div>
         </aside>
