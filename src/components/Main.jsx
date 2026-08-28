@@ -45,11 +45,11 @@ const Main = () => {
   }, [filterByString]);
 
   return (
-    <main>
+    <main className="page-main">
       <Hero setFilterByString={setFilterByString} />
       <h2>رستوران ها</h2>
       {restaurantsFiltered.length === 0 ? (
-        <Shimmer />
+        <Shimmer mode="homepage" />
       ) : (
         <ul className="restaurants" id="explore">
           {restaurantsFiltered.map((restaurant, i) => (

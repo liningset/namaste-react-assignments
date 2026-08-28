@@ -1,12 +1,13 @@
 @use "./__mixins" as *;
 
-header {
+header.page-header {
   background-color: var(--primary-fg);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100vw;
+  z-index: 9999;
 
   nav {
     display: flex;
@@ -46,11 +47,13 @@ header {
         position: relative;
 
         a {
+          display: inline-block;
           transition:
             color 0.3s ease,
             text-shadow 0.3s ease;
           text-decoration: none;
           color: inherit;
+          height: 100%;
         }
 
         &:hover a {

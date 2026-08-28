@@ -9,7 +9,7 @@ const Header = () => {
   
   */
   return (
-    <header>
+    <header className="page-header">
       <nav>
         <NavList />
         <Link to="/">
