@@ -41,6 +41,7 @@ article.restaurant-container {
     border-radius: 1rem;
     padding: 1rem;
     gap: 2rem;
+    box-shadow: 0 0 15px var(--box-shadow-clr);
   }
 
   header.restaurant-header {
@@ -69,6 +70,9 @@ article.restaurant-container {
     background-color: var(--white);
     border-radius: 1rem;
     z-index: 100;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   .avatar {
