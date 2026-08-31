@@ -4,7 +4,8 @@
 @use "./__RestaurantCard";
 @use "./__RestaurantPage";
 @use "./__MenuCategory";
-@use "./_Shimmer";
+@use "./__Shimmer";
+@use "./_AboutPage";
 
 @font-face {
   src: url(../../public/Yekan.ttf) format(truetype);
