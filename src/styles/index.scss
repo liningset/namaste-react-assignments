@@ -1,5 +1,6 @@
 @use "./__Header";
 @use "./__Hero";
+@use "./__Footer";
 @use "./__Main";
 @use "./__RestaurantCard";
 @use "./__RestaurantPage";
@@ -36,4 +37,9 @@ body {
   justify-content: center;
   background-color: var(--primary-bg);
   scroll-behavior: smooth;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
 }

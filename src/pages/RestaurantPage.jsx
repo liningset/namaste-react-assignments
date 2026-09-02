@@ -29,12 +29,9 @@ const RestaurantPage = () => {
     const vendorDetailsExtra = await fetchData(API_VENDOR_REVIEW + resID);
     const vendorMenu = await fetchData(API_VENDOR_MENU + resID);
     setAllData({ ...vendorDetails, ...vendorDetailsExtra, ...vendorMenu });
-    console.log({ ...vendorDetails, ...vendorDetailsExtra, ...vendorMenu });
   };
 
   const convertRatingFormat = (rating) => {
-    console.log(rating);
-
     return ((Number(rating) * 5) / 10).toFixed(1);
   };
 
@@ -75,7 +72,6 @@ const RestaurantPage = () => {
             <FontAwesomeIcon icon={faMapPin} style={{ color: "red" }} />
             {allData?.address?.address}
           </p>
-          {console.log(allData?.menuCategories[4])}
           {allData?.menuCategories.map((category) => {
             return <MenuCategory key={category.id} categoryData={category} />;
           })}

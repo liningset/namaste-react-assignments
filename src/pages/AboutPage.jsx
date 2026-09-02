@@ -11,8 +11,6 @@ class AboutPage extends Component {
 
   componentDidMount() {
     this.timeout = setInterval(() => {
-      console.log("timeout ran");
-
       this.setState({
         staffMembers: [
           {

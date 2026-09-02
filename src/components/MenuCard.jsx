@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 const MenuCard = ({ productData }) => {
-  console.log(productData);
-
   return (
     <li className="product-card">
       <div className="product-cover">
