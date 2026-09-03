@@ -28,7 +28,7 @@ const router = createBrowserRouter([
       },
       { path: "/login", element: <LoginPage /> },
       {
-        path: "/restaurants/:resID",
+        path: "/restaurants/:vendorID",
         element: <RestaurantPage />,
       },
     ],
