@@ -39,7 +39,7 @@ class AboutPage extends Component {
           },
         ],
       });
-    }, 2000);
+    }, 1000);
   }
   componentWillUnmount() {
     clearInterval(this.timeout);

@@ -16,6 +16,7 @@ const useVendorData = (vendorID) => {
     const datas = await Promise.all(
       responses.map((response) => response.json()),
     );
+    //stitch each object.data together into the large vendorObj
     setVendorObj(datas.reduce((a, c) => ({ ...a, ...c?.data }), {}));
   };
 

@@ -1,6 +1,8 @@
 import { Link } from "react-router";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const NavList = () => {
+  const isOnline = useOnlineStatus();
   return (
     <ul>
       <li>
@@ -15,6 +17,8 @@ const NavList = () => {
       <li>
         <Link to="/#explore">مشاهده</Link>
       </li>
+      {/* just for fun */}
+      <li>آنلاین؟ {isOnline ? "🟢" : "🔴"} </li>
     </ul>
   );
 };
