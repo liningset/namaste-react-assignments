@@ -7,7 +7,7 @@ import useRestaurants from "../utils/useRestaurants";
 import RestaurantsList from "./RestaurantsList";
 
 const Main = () => {
-  const restaurants = useRestaurants();
+  const { restaurants, failed } = useRestaurants();
   const [filterByString, setFilterByString] = useState("");
   const filteredRestaurants = restaurants?.filter((res) => {
     const data = res.data;
@@ -19,17 +19,26 @@ const Main = () => {
     );
   });
 
+  const chooseJSX = () => {
+    if (restaurants === null) {
+      return failed ? (
+        <h2>متاسفانه مشکلی در دریافت رستوران ها رخ داد</h2>
+      ) : (
+        <Shimmer mode="homepage" />
+      );
+    }
+    return filteredRestaurants.length > 0 ? (
+      <RestaurantsList filteredRestaurants={filteredRestaurants} />
+    ) : (
+      <h2>رستورانی یافت نشد :(</h2>
+    );
+  };
+
   return (
     <main className="page-main">
       <Hero setFilterByString={setFilterByString} />
       <h2>رستوران ها</h2>
-      {restaurants === null ? (
-        <Shimmer mode="homepage" />
-      ) : filteredRestaurants.length > 0 ? (
-        <RestaurantsList filteredRestaurants={filteredRestaurants} />
-      ) : (
-        <h2>متاسفانه رستورانی یافت نشد :(</h2>
-      )}
+      {chooseJSX()}
     </main>
   );
 };

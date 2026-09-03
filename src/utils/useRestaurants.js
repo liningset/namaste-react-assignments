@@ -1,24 +1,30 @@
 import { useState, useEffect } from "react";
 import { API_RESTAURANTS } from "./constants";
 
-const useFetchRestaurants = (page = 1) => {
+const useRestaurants = (page = 1) => {
   const [restaurants, setRestaurants] = useState(null);
+  const [failed, setFailed] = useState(false);
 
   const fetchData = async () => {
-    const response = await fetch(
-      API_RESTAURANTS.concat(`&page=${page}&page_size=16`),
-    );
-    const data = await response.json();
-    //removing unnecessary text entry
-    data?.data?.finalResult.shift();
-    setRestaurants(data?.data?.finalResult);
+    try {
+      const response = await fetch(
+        API_RESTAURANTS.concat(`&page=${page}&page_size=16`),
+      );
+      const data = await response.json();
+      data?.data?.finalResult.shift();
+      setRestaurants(data?.data?.finalResult);
+      setFailed(false);
+    } catch (err) {
+      setRestaurants(null);
+      setFailed(true);
+    }
   };
 
   useEffect(() => {
     fetchData();
   }, []);
 
-  return restaurants;
+  return { restaurants: restaurants, failed: failed };
 };
 
-export default useFetchRestaurants;
+export default useRestaurants;

@@ -12,7 +12,7 @@ import MenuCategory from "../components/MenuCategory";
 const RestaurantPage = () => {
   window.scrollTo(0, 0);
   const { vendorID } = useParams();
-  const data = useVendorData(vendorID);
+  const { vendorData: data, failed } = useVendorData(vendorID);
 
   // e.g. input: 9.20423023224, output: 4.4
   const convertRatingFormat = (rating) => {
@@ -20,7 +20,11 @@ const RestaurantPage = () => {
   };
 
   return data === null ? (
-    <Shimmer mode="restaurantpage" />
+    failed ? (
+      <h2>مشکلی در دریافت اطلاعات رستوران رخ داد</h2>
+    ) : (
+      <Shimmer mode="restaurantpage" />
+    )
   ) : (
     <article className="restaurant-container">
       <div className="hero-cover">
