@@ -1,66 +1,48 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
-import { API_RESTAURANTS } from "../utils/constants";
+
 import Shimmer from "./Shimmer";
 import Hero from "./Hero";
-import { Link } from "react-router";
+
+import useRestaurants from "../utils/useRestaurants";
+import RestaurantsList from "./RestaurantsList";
 
 const Main = () => {
-  const [restaurants, setRestaurants] = useState([]);
-  const [restaurantsFiltered, setRestaurantsFiltered] = useState(restaurants);
+  const restaurants = useRestaurants();
   const [filterByString, setFilterByString] = useState("");
+  const [filterSuccessful, setFilterSuccessful] = useState(true);
 
-  const fetchData = async (page = 1) => {
-    const response = await fetch(
-      API_RESTAURANTS.concat(`&page=${page}&page_size=16`),
-    );
-    const data = await response.json();
-    //removing unnecessary text entry
-    data.data.finalResult.shift();
-    setRestaurants(data.data.finalResult);
-    //i explained below why i didn't just set both states here
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  /* i populated it seperately because i dont want possible pagination which
-  will use the same fetchData function call to ruin the filtered list of restaurants */
-  useEffect(() => {
-    setRestaurantsFiltered(restaurants);
-  }, [restaurants]);
-
-  useEffect(() => {
-    const filtered = restaurants.filter((res) => {
+  const filteredRestaurants = () => {
+    if (restaurants === null) return null;
+    return restaurants.filter((res) => {
       const data = res.data;
       return (
-        new RegExp(filterByString, "i").test(data.title) ||
+        data?.title.toLowerCase().includes(filterByString) ||
         data?.cuisinesArray.some((cuisine) =>
           cuisine.title.toLowerCase().includes(filterByString),
         )
       );
     });
-    setRestaurantsFiltered(filtered);
+  };
+
+  useEffect(() => {
+    if (filteredRestaurants() == null) {
+      setFilterSuccessful(true);
+      return;
+    }
+    if (filteredRestaurants()?.length > 0) setFilterSuccessful(true);
+    else setFilterSuccessful(false);
   }, [filterByString]);
 
   return (
     <main className="page-main">
       <Hero setFilterByString={setFilterByString} />
       <h2>رستوران ها</h2>
-      {restaurantsFiltered.length === 0 ? (
+      {restaurants === null ? (
         <Shimmer mode="homepage" />
+      ) : filterSuccessful ? (
+        <RestaurantsList filtered={filteredRestaurants} />
       ) : (
-        <ul className="restaurants" id="explore">
-          {restaurantsFiltered.map((restaurant, i) => (
-            <Link
-              to={`/restaurants/${restaurant?.data?.vendorCode}`}
-              key={restaurant?.id ? restaurant.id : i}
-            >
-              <RestaurantCard data={restaurant?.data} />
-            </Link>
-          ))}
-        </ul>
+        <h2>متاسفانه رستورانی یافت نشد :(</h2>
       )}
     </main>
   );

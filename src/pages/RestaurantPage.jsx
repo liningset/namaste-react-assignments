@@ -17,6 +17,7 @@ import MenuCategory from "../components/MenuCategory";
 const RestaurantPage = () => {
   const { resID } = useParams();
   const [allData, setAllData] = useState(null);
+  window.scrollTo(0, 0);
 
   const fetchData = async (API) => {
     const response = await fetch(API);
