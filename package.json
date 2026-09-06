@@ -1,6 +1,6 @@
 {
   "name": "Food ordering app 🚀",
-  "version": "4.2.0",
+  "version": "10.0.0",
   "description": "the very first and exciting react frontend for a food app",
   "type": "module",
   "scripts": {
@@ -27,9 +27,11 @@
     "@fortawesome/fontawesome-svg-core": "^7.3.1",
     "@fortawesome/free-solid-svg-icons": "^7.3.1",
     "@fortawesome/react-fontawesome": "^3.5.0",
+    "@tailwindcss/postcss": "^4.3.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "react-router": "^7.18.2"
+    "react-router": "^7.18.2",
+    "tailwindcss": "^4.3.3"
   },
   "browserslist": {
     "production": [
