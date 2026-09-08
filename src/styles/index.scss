@@ -24,11 +24,12 @@
   --shimmer: #cbcbcb;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+// }
+//because tailwindcss already has preflight styles baked in
 
 body {
   min-height: 100vh;

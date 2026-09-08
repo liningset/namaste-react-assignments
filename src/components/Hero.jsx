@@ -8,9 +8,9 @@ const Hero = ({ setFilterByString }) => {
   }
   return (
     <section className="hero-section">
-      <h1>رستوران های مورد علاقتو پیدا کن!</h1>
+      <h1 className="text-5xl">رستوران های مورد علاقتو پیدا کن!</h1>
       <form className="search-field" onSubmit={(e) => onFormSubmit(e)}>
-        <input type="text" id="search-bar" className="search-bar" />
+        <input type="text" id="search-bar" className="search-bar bg-white" />
         <button type="submit">
           <FontAwesomeIcon icon={faMagnifyingGlass} />
         </button>

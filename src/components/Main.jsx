@@ -37,7 +37,7 @@ const Main = () => {
   return (
     <main className="page-main">
       <Hero setFilterByString={setFilterByString} />
-      <h2>رستوران ها</h2>
+      <h2 className="text-2xl font-bold">رستوران ها</h2>
       {chooseJSX()}
     </main>
   );
