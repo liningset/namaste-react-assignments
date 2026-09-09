@@ -8,6 +8,7 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import MenuCategory from "../components/MenuCategory";
+import Avatar, { withPro } from "../components/Avatar";
 
 const RestaurantPage = () => {
   window.scrollTo(0, 0);
@@ -18,6 +19,8 @@ const RestaurantPage = () => {
   const convertRatingFormat = (rating) => {
     return ((Number(rating) * 5) / 10).toFixed(1);
   };
+
+  const ProAvatar = withPro(Avatar);
 
   return data === null ? (
     failed ? (
@@ -32,9 +35,12 @@ const RestaurantPage = () => {
       </div>
       <div className="article-wrapper">
         <header className="restaurant-header">
-          <div className="avatar">
-            <img src={data?.logo} alt="logo" />
-          </div>
+          {data?.isPro ? (
+            <ProAvatar src={data?.logo} alt="logo" />
+          ) : (
+            <Avatar src={data?.logo} alt="logo" />
+          )}
+
           <div>
             <h2>{data?.title}</h2>
             <div className="sub-sub-heading">

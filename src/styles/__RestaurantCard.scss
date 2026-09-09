@@ -44,6 +44,12 @@ li.card {
     align-self: center;
     z-index: 10;
   }
+  .content .promoted {
+    margin-top: -2.5rem;
+  }
+  .content:has(.promoted) .avatar {
+    margin-top: 0;
+  }
   .cuisines {
     display: flex;
     flex-wrap: wrap;

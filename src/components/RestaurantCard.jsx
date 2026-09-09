@@ -1,16 +1,20 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
+import Avatar, { withPro } from "./Avatar";
 
 const RestaurantCard = ({ data }) => {
+  const ProAvatar = withPro(Avatar);
   return (
     <li className="card">
       <div className="card-heading-image">
         <img src={data?.backgroundImage} alt="restaurant interior" />
       </div>
       <div className="content">
-        <div className="avatar">
-          <img src={data?.logo} alt={data?.title} />
-        </div>
+        {data?.is_pro ? (
+          <ProAvatar src={data?.logo} alt={data?.title} />
+        ) : (
+          <Avatar src={data?.logo} alt={data?.title} />
+        )}
         <h4 className="title">{data?.title}</h4>
         <span>از {data?.minOrder / 1000} هزار تومان</span>
         <div className="cuisines">
