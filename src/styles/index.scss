@@ -4,7 +4,7 @@
 @use "./__Main";
 @use "./__RestaurantCard";
 @use "./__RestaurantPage";
-@use "./__MenuCategory";
+// @use "./__MenuCategory";
 @use "./__Shimmer";
 @use "./_AboutPage";
 
@@ -22,12 +22,6 @@
   --secondary-fg: #efefef;
   --white: #fff;
   --shimmer: #cbcbcb;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
 }
 
 body {

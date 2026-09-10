@@ -6,6 +6,7 @@ article.restaurant-container {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-bottom: 2rem;
 
   color: var(--primary-fg);
 
@@ -75,13 +76,20 @@ article.restaurant-container {
     gap: 2rem;
   }
 
+  .promoted {
+    margin-top: 0;
+  }
+
   .avatar {
     @include restaurant-avatar;
   }
 }
 
 @media (min-width: 768px) {
-  article.restaurant-container > .article-wrapper {
-    padding: 2rem;
+  article.restaurant-container {
+    margin-bottom: 3rem;
+    > .article-wrapper {
+      padding: 2rem;
+    }
   }
 }

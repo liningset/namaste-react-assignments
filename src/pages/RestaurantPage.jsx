@@ -7,8 +7,8 @@ import {
   faMapPin,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import MenuCategory from "../components/MenuCategory";
 import Avatar, { withPro } from "../components/Avatar";
+import Accordions from "../components/Accordions";
 
 const RestaurantPage = () => {
   window.scrollTo(0, 0);
@@ -62,9 +62,8 @@ const RestaurantPage = () => {
             <FontAwesomeIcon icon={faMapPin} style={{ color: "red" }} />
             {data?.address?.address}
           </p>
-          {data?.menuCategories.map((category) => {
-            return <MenuCategory key={category.id} categoryData={category} />;
-          })}
+
+          <Accordions categories={data?.menuCategories} />
         </main>
       </div>
     </article>
