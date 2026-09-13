@@ -6,29 +6,31 @@ const LoginPage = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    setUser(e.target.elements[0].value);
+    const formData = new FormData(e.target);
+
+    setUser(formData.get("username"));
     setLoggedIn(true);
   };
   return (
     <div className="flex w-full h-full items-center justify-center">
       <form className="flex flex-col gap-2" onSubmit={(e) => handleLogin(e)}>
-        <label htmlFor="username">نام کاربری</label>
         <input
           className="p-2 text-lg"
-          id="username"
+          name="username"
           type="text"
           placeholder="نام کاربری"
+          required
         />
-        <label htmlFor="password">پسورد</label>
         <input
           className="p-2 text-lg"
-          id="password"
+          name="password"
           type="password"
           placeholder="رمز"
+          required
         />
         <button
           type="submit"
-          className="p-2 bg-[#252525] text-white hover:bg-[#858585] border-none duration-300"
+          className="p-2 text-lg bg-[#252525] text-white hover:bg-[#858585] border-none duration-300"
         >
           ورود
         </button>
