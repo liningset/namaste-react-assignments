@@ -4,6 +4,8 @@ import { Outlet } from "react-router";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
 import { useState } from "react";
+import { Provider } from "react-redux";
+import appStore from "../utils/appStore";
 
 const AppLayout = () => {
   const isOnline = useOnlineStatus();
@@ -15,11 +17,13 @@ const AppLayout = () => {
       به نظر میرسد اینترنت شما خاموش است, لطفا اتصال خود را مجددا چک کنید
     </h1>
   ) : (
-    <UserContext.Provider value={{ loggedIn, user, setLoggedIn, setUser }}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </UserContext.Provider>
+    <Provider store={appStore}>
+      <UserContext.Provider value={{ loggedIn, user, setLoggedIn, setUser }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
+    </Provider>
   );
 };
 
