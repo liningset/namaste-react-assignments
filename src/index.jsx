@@ -7,6 +7,7 @@ import ContactPage from "./pages/ContactPage";
 import LoginPage from "./pages/LoginPage";
 import ErrorPage from "./pages/ErrorPage";
 import RestaurantPage from "./pages/RestaurantPage";
+import CartPage from "./pages/CartPage";
 
 //wanted to practice lazy loading
 const AboutPage = lazy(() => import("./pages/AboutPage"));
@@ -38,6 +39,7 @@ const router = createBrowserRouter([
         path: "/restaurants/:vendorID",
         element: <RestaurantPage />,
       },
+      { path: "/cart", element: <CartPage /> },
     ],
   },
 ]);

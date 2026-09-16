@@ -21,7 +21,10 @@ const MenuAccordion = ({ data, expanded, setExpandIndex }) => {
       {expanded && (
         <ul className="flex flex-col p-8 list-none">
           {data.products.map((product, i) => (
-            <MenuCard key={product.id ?? i} productData={product} />
+            <MenuCard
+              key={product.id ?? i}
+              productData={{ ...product, id: product.id ?? product.title }}
+            />
           ))}
         </ul>
       )}

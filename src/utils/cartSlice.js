@@ -1,23 +1,38 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cartItems: [],
-    cartLength: 0,
   },
   reducers: {
     addToCart: (state, action) => {
-      state.cartItems.push(action.payload);
-      state.cartLength += 1;
+      const duplicate = state.cartItems.find(
+        (item) => item.data.id === action.payload.id,
+      );
+
+      if (duplicate) {
+        duplicate.quantity += 1;
+      } else {
+        state.cartItems.push({
+          id: action.payload.id,
+          data: action.payload,
+          quantity: 1,
+        });
+      }
     },
     removeFromCart: (state, action) => {
-      state.cartItems.splice(state.cartItems.indexOf(action.payload), 1);
-      state.cartLength -= 1;
+      const duplicate = state.cartItems.find(
+        (item) => item.data.id === action.payload.id,
+      );
+      if (duplicate?.quantity === 1) {
+        state.cartItems.splice(
+          state.cartItems.findIndex((item) => item.id === action.payload.id),
+          1,
+        );
+      } else duplicate.quantity -= 1;
     },
-    clearCart: (state) => {
-      return { cartItems: [], cartLength: 0 };
-    },
+    clearCart: () => ({ cartItems: [] }),
   },
 });
 

@@ -3,6 +3,7 @@ import { PUBLIC_DIR } from "../utils/constants";
 import NavList from "./NavList";
 import { Link } from "react-router";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   /*
@@ -12,10 +13,21 @@ const Header = () => {
   */
 
   const { user } = useContext(UserContext);
+  const cartLength = useSelector((store) => store.cart.cartItems).reduce(
+    (a, c) => a + c.quantity,
+    0,
+  );
+  console.log("cartLength: ", cartLength);
+
   return (
     <header className="page-header">
       <nav>
-        <span className="text-white">{user}</span>
+        <ul>
+          <li className="text-white">{user}</li>
+          <li>
+            <Link to="/cart">سبد ({cartLength})</Link>
+          </li>
+        </ul>
         <NavList />
         <Link to="/">
           <img src={PUBLIC_DIR + "logo.png"} alt="Logo" />
