@@ -1,11 +1,8 @@
 import { Link } from "react-router";
-import useOnlineStatus from "../utils/useOnlineStatus";
-import { useContext } from "react";
-import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const NavList = () => {
-  const isOnline = useOnlineStatus();
-  const { loggedIn } = useContext(UserContext);
+  const loggedIn = useSelector((state) => state.user.loggedIn);
 
   return (
     <ul>

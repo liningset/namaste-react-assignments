@@ -1,8 +1,6 @@
-import { useContext } from "react";
 import { PUBLIC_DIR } from "../utils/constants";
 import NavList from "./NavList";
 import { Link } from "react-router";
-import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Header = () => {
@@ -12,18 +10,17 @@ const Header = () => {
   
   */
 
-  const { user } = useContext(UserContext);
+  const userName = useSelector((state) => state.user.username);
   const cartLength = useSelector((store) => store.cart.cartItems).reduce(
     (a, c) => a + c.quantity,
     0,
   );
-  console.log("cartLength: ", cartLength);
 
   return (
     <header className="page-header">
       <nav>
         <ul>
-          <li className="text-white">{user}</li>
+          <li className="text-white">{userName}</li>
           <li>
             <Link to="/cart">سبد ({cartLength})</Link>
           </li>

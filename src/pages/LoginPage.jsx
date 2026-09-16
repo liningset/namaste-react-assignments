@@ -1,15 +1,14 @@
-import { useContext } from "react";
-import UserContext from "../utils/UserContext";
+import { login } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const LoginPage = () => {
-  const { setUser, setLoggedIn } = useContext(UserContext);
+  const dispatch = useDispatch();
 
   const handleLogin = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
 
-    setUser(formData.get("username"));
-    setLoggedIn(true);
+    dispatch(login(formData.get("username")));
   };
   return (
     <div className="flex w-full h-full items-center justify-center">
