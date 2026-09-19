@@ -4,4 +4,3 @@ dist/
 .prettierrc
 .prettierignore
 .env
-.parcelrc

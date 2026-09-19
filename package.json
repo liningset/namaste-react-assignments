@@ -9,11 +9,18 @@
     "build": "parcel build public/index.html"
   },
   "devDependencies": {
+    "@babel/core": "^8.0.6",
+    "@babel/preset-env": "^8.0.6",
     "@parcel/transformer-image": "^2.16.4",
     "@parcel/transformer-sass": "^2.16.4",
+    "@testing-library/dom": "^10.4.2",
+    "@testing-library/react": "^16.3.3",
+    "babel-jest": "^30.5.2",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.5.1",
     "events": "^3.3.0",
+    "jest": "^30.5.2",
+    "jest-environment-jsdom": "^30.5.2",
     "os-browserify": "^0.3.0",
     "parcel": "^2.16.4",
     "path-browserify": "^1.0.1",
