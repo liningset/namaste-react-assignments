@@ -1,0 +1,292 @@
+{
+  "id": 304354,
+  "vendorCode": "p6e4v6",
+  "noOrder": false,
+  "title": "شیرینی لادن فاطمی",
+  "description": "",
+  "rate": 4.7,
+  "rating": 9.38588819666611,
+  "normalized_rating": 9.38588819666611,
+  "logo": "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/64e7975f39dda.jpg",
+  "defLogo": "https://cdn.snappfood.ir/media/cache/vendor_logo/uploads/images/vendors/logos/64e7975f39dda.jpg",
+  "vendor_cover": "https://cdn.snappfood.ir/uploads/images/tags/cover/1.jpg",
+  "taxEnabled": false,
+  "taxIncluded": false,
+  "taxEnabledInProducts": false,
+  "taxEnabledInPackaging": false,
+  "taxEnabledInDeliveryFee": false,
+  "tax": 0,
+  "serviceFee": 10000,
+  "deliveryArea": "",
+  "discount": 0,
+  "isOpen": true,
+  "minDeliveryFee": 0,
+  "maxDeliveryFee": 0,
+  "deliveryTime": 0,
+  "paymentTypes": [1, 2, 5],
+  "schedules": [
+    {
+      "type": 0,
+      "weekday": 1,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    },
+    {
+      "type": 0,
+      "weekday": 2,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    },
+    {
+      "type": 0,
+      "weekday": 3,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    },
+    {
+      "type": 0,
+      "weekday": 4,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    },
+    {
+      "type": 0,
+      "weekday": 5,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    },
+    {
+      "type": 0,
+      "weekday": 6,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    },
+    {
+      "type": 0,
+      "weekday": 7,
+      "allDay": false,
+      "startHour": "08:15",
+      "stopHour": "22:44"
+    }
+  ],
+  "minOrder": 100000,
+  "address": "دکتر فاطمی، روبروی هتل لاله، جنب تامین اجتماعی، شیرینی لادن فاطمی",
+  "phone": "",
+  "website": "",
+  "status": 1,
+  "lat": 35.715431,
+  "lon": 51.392547,
+  "restaurantClass": "",
+  "foodTypes": [],
+  "restaurantTypes": [],
+  "isFavorite": false,
+  "priority": 1000,
+  "city": "تهران",
+  "city_en": "Tehran",
+  "area": "ونک",
+  "commentCount": 5415,
+  "recommendedFor": "",
+  "establishment": "CONFECTIONERY",
+  "mostPopularItems": "",
+  "costsForTwo": 0,
+  "onlineOrder": true,
+  "voteCount": 5415,
+  "discountType": null,
+  "menuUrl": "https://snappfood.ir/restaurant/menu/p6e4v6/fatemi?superTypeAlias=CONFECTIONERY",
+  "discountValue": 0,
+  "discountForAll": false,
+  "containerFee": 0,
+  "deliveryGuarantee": false,
+  "badges": [
+    {
+      "title": "ارسال با اسنپ فود",
+      "description": "سفارش شما از این رستوران با اسنپ‌اکسپرس، سریع‌تر به دست شما می‌رسد",
+      "image": "https://static.zoodfood.com/bundles/bodofoodfrontend/images/vendor/express-badge-png.png",
+      "white_image": "https://static.zoodfood.com/bundles/bodofoodfrontend/images/vendor/header/express.png"
+    },
+    {
+      "title": "شیرینی‌فروشی",
+      "description": "شیرینی‌فروشی",
+      "image": "https://static.zoodfood.com/bundles/bodofoodfrontend/images/landing/sweet/gray-sweet.png",
+      "white_image": "https://static.zoodfood.com/bundles/bodofoodfrontend/images/landing/sweet/white-sweet.png"
+    }
+  ],
+  "discountStartHour1": "",
+  "discountStopHour1": "",
+  "discountStartHour2": "",
+  "discountStopHour2": "",
+  "discountValueForView": 0,
+  "coverPath": "",
+  "cuisinesArray": [
+    {
+      "id": 39,
+      "title": "شیرینی"
+    },
+    {
+      "id": 54,
+      "title": "آجیل و خشکبار"
+    }
+  ],
+  "vendor_badges": [],
+  "preOrderEnabled": false,
+  "preorderToday": {
+    "weekday": "",
+    "name": "",
+    "startHour": "",
+    "intervals": null
+  },
+  "vendorType": "CONFECTIONERY",
+  "childType": "CONFECTIONERY",
+  "budgetClass": "مناسب",
+  "vendorTypeTitle": "شیرینی‌فروشی",
+  "isZFExpress": true,
+  "isDeliveryFeeHasDiscount": false,
+  "deliveryFee": 43300,
+  "deliveryFeeAfterDiscount": 0,
+  "backgroundImage": "https://cdn.snappfood.ir/cdn/vendor_sub_types/6/13.jpg",
+  "backgroundImageCustom": "https://cdn.snappfood.ir/cdn/vendor_sub_types/6/13.jpg",
+  "has_coupon": true,
+  "coupon_count": 2,
+  "best_coupon": "ارسال رایگان ویژه کاربران PRO",
+  "is_pro": true,
+  "has_first_coupon": false,
+  "userImage": [
+    {
+      "id": 34521529,
+      "description": null,
+      "fileName": "https://cdn.snappfood.ir/media/cache/vendor_user_app_image2/uploads/images/vendors/0421c24f527a23fc.jpg",
+      "thumbNailSource": "https://cdn.snappfood.ir/250x250//uploads/images/vendors/0421c24f527a23fc.jpg",
+      "likeCount": 0,
+      "commentCount": 0,
+      "timeDifference": 0,
+      "imageType": "PRODUCT_IMAGE",
+      "userType": "VENDOR"
+    },
+    {
+      "id": 34520932,
+      "description": null,
+      "fileName": "https://cdn.snappfood.ir/media/cache/vendor_user_app_image2/uploads/images/vendors/ddfd496534beedc0.jpg",
+      "thumbNailSource": "https://cdn.snappfood.ir/250x250//uploads/images/vendors/ddfd496534beedc0.jpg",
+      "likeCount": 0,
+      "commentCount": 0,
+      "timeDifference": 0,
+      "imageType": "PRODUCT_IMAGE",
+      "userType": "VENDOR"
+    },
+    {
+      "id": 34502751,
+      "description": null,
+      "fileName": "https://cdn.snappfood.ir/media/cache/vendor_user_app_image2/uploads/images/vendors/4610db7e3d584ac5.jpg",
+      "thumbNailSource": "https://cdn.snappfood.ir/250x250//uploads/images/vendors/4610db7e3d584ac5.jpg",
+      "likeCount": 0,
+      "commentCount": 0,
+      "timeDifference": 0,
+      "imageType": "PRODUCT_IMAGE",
+      "userType": "VENDOR"
+    },
+    {
+      "id": 34496690,
+      "description": null,
+      "fileName": "https://cdn.snappfood.ir/media/cache/vendor_user_app_image2/uploads/images/vendors/c97c60d79a65c7b8.jpg",
+      "thumbNailSource": "https://cdn.snappfood.ir/250x250//uploads/images/vendors/c97c60d79a65c7b8.jpg",
+      "likeCount": 0,
+      "commentCount": 0,
+      "timeDifference": 0,
+      "imageType": "PRODUCT_IMAGE",
+      "userType": "VENDOR"
+    }
+  ],
+  "menuImage": [],
+  "countReview": 5415,
+  "countOfUserImages": 544,
+  "deliveryFeeDiscount": 0,
+  "trendingScore": -1,
+  "delay": "",
+  "deliver": true,
+  "eta": 25,
+  "min_eta": 25,
+  "max_eta": 25,
+  "open_at_eta": true,
+  "action": "doNothing",
+  "has_delay": false,
+  "delay_time": 0,
+  "total_time": 0,
+  "bid": false,
+  "superTypeAlias": "CONFECTIONERY",
+  "is_food_party": false,
+  "is_market_party": false,
+  "click_id": null,
+  "cpc_campaign_hash": null,
+  "cpc_spot": null,
+  "is_ecommerce": false,
+  "is_economical": false,
+  "is_grocery_vip": false,
+  "is_grocery_returnable": false,
+  "is_grocery_economic": false,
+  "vendor_status": null,
+  "status_title": "ACTIVE",
+  "status_text": "",
+  "status_description": "",
+  "has_cashback": false,
+  "new_type": "STORE",
+  "new_type_title": "فروشگاه",
+  "is_eco": false,
+  "is_vip_packaging": false,
+  "is_pickup": false,
+  "vendor_badge_list": [
+    {
+      "type": "hasFirstCoupon",
+      "text": "ارسال رایگان با ۱,۰۰۰,۰۰۰ تومان خرید",
+      "icon": "has_firstDiscount",
+      "status": "normal",
+      "is_best_offer": true,
+      "can_show": false
+    },
+    {
+      "type": "hasCoupon",
+      "text": "دارای 2 کوپن",
+      "icon": "has_cashback",
+      "status": "normal",
+      "is_best_offer": false,
+      "can_show": true
+    }
+  ],
+  "badge_list": [
+    {
+      "type": "hasFirstCoupon",
+      "text": "ارسال رایگان",
+      "icon": "has_firstDiscount",
+      "is_best_offer": true,
+      "status": "normal"
+    },
+    {
+      "type": "isPro",
+      "text": "ارسال رایگان",
+      "icon": "FOODPRO",
+      "is_best_offer": false,
+      "status": "normal"
+    },
+    {
+      "type": "hasCoupon",
+      "text": "2+",
+      "icon": "",
+      "is_best_offer": false,
+      "status": "normal"
+    }
+  ],
+  "vendor_super_type_id": 3,
+  "vendor_sub_type_id": 6,
+  "coupon_badge": "pro",
+  "strike_through_type": 0,
+  "is_gem": false,
+  "event_hash": "",
+  "is_jimbo": false,
+  "vendor_index": 2,
+  "item_index": 2
+}
