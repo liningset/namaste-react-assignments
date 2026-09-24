@@ -5,7 +5,7 @@ import Avatar, { withPro } from "./Avatar";
 const RestaurantCard = ({ data }) => {
   const ProAvatar = withPro(Avatar);
   return (
-    <li className="card">
+    <li className="card" data-testid="card">
       <div className="card-heading-image">
         <img src={data?.backgroundImage} alt="restaurant interior" />
       </div>
