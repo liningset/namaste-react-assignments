@@ -12,7 +12,10 @@ const MenuCard = ({ productData, quantity }) => {
   const handleRemoveFromCart = (product) => dispatch(removeFromCart(product));
 
   return (
-    <li className="flex flex-col sm:flex-row items-center gap-4 py-4 [&:not(:first-child):not(:last-child)]:border-y border-[#858585]">
+    <li
+      className="flex flex-col sm:flex-row items-center gap-4 py-4 [&:not(:first-child):not(:last-child)]:border-y border-[#858585]"
+      data-testid="product"
+    >
       {quantity && <span className="text-xl">x{quantity}</span>}
       <div
         className={`sm:w-4/12 md:w-2/12 aspect-square rounded-2xl overflow-hidden relative${fromCart ? " border-2 border-pink-500" : " border-2 border-transparent"}`}
@@ -25,6 +28,7 @@ const MenuCard = ({ productData, quantity }) => {
         <button
           onClick={() => handleAddToCart(productData)}
           className="absolute z-10 left-0 bottom-0 cursor-pointer bg-pink-500 rounded-full text-white border-none p-2 hover:bg-[#454545] duration-300"
+          data-testid="add-btn"
         >
           <FontAwesomeIcon icon={faPlus} />
         </button>
@@ -33,6 +37,7 @@ const MenuCard = ({ productData, quantity }) => {
             <button
               onClick={() => handleRemoveFromCart(productData)}
               className="absolute z-10 left-10 bottom-0 cursor-pointer bg-pink-500 rounded-full text-white border-none p-2 hover:bg-[#454545] duration-300"
+              data-testid="remove-btn"
             >
               <FontAwesomeIcon icon={faMinus} />
             </button>

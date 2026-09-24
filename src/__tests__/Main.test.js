@@ -1,7 +1,6 @@
-import { render, screen, waitFor } from "@testing-library/react";
-import { act } from "react";
+import { render, screen } from "@testing-library/react";
 import Main from "../components/Main";
-import MOCK_DATA from "./MockRestaurants.json";
+import MOCK_DATA from "./mocks/mockRestaurants.json";
 import { BrowserRouter } from "react-router";
 import userEvent from "@testing-library/user-event";
 

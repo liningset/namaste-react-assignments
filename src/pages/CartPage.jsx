@@ -9,7 +9,6 @@ const CartPage = () => {
     (a, c) => c.data.variations[0].price * c.quantity + a,
     0,
   );
-  console.log(totalPrice);
 
   const dispatch = useDispatch();
 

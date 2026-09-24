@@ -4,7 +4,10 @@ import MenuCard from "./MenuCard";
 
 const MenuAccordion = ({ data, expanded, setExpandIndex }) => {
   return (
-    <li className="shadow border border-[#858585] rounded-md">
+    <li
+      className="shadow border border-[#858585] rounded-md"
+      data-testid="accordion"
+    >
       <button
         onClick={setExpandIndex}
         className="bg-[#858585] w-full flex justify-between items-center text-white border-none py-2 px-4 cursor-pointer"
