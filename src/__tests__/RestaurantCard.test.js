@@ -2,7 +2,7 @@ import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import RestaurantCard from "../components/RestaurantCard";
 import Avatar, { withPro } from "../components/Avatar";
-import MockData from "./MockData.json";
+import MockData from "./mocks/mockRestaurantCard.json";
 
 describe("RestaurantCard base tests", () => {
   test("should render card with the desired heading", () => {

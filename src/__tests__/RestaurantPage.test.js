@@ -126,6 +126,6 @@ describe("Restaurant page tests", () => {
     await user.click(screen.getByRole("button", { name: "خالی کردن سبد" }));
 
     expect(await screen.findByText(/سبد.*0.*\)/)).toBeInTheDocument();
-    // expect(await screen.findAllByTestId("remove-btn")).toHaveLength(0);
+    expect(await screen.findByText("سبد خرید شما خالیست!")).toBeInTheDocument();
   });
 });
